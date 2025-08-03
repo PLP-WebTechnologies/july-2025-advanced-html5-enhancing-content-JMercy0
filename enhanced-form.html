@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      line-height: 1.5;
+    }
+    header, main, footer {
+      margin-bottom: 2rem;
+    }
+    h1, h2, h3 {
+      color: #003366;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #666;
+    }
+    th, td {
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.4rem;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #0055a5;
+    }
+    .media-container {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Enhanced HTML5 Page</h1>
+    <p>This page demonstrates the use of lists, tables, media, and an HTML5 form with native validation.</p>
+  </header>
+
+  <main>
+    <!-- Lists Section -->
+    <section aria-labelledby="list-section">
+      <h2 id="list-section">Features of Our Service</h2>
+      <p>Here are some key benefits you will enjoy:</p>
+      <ul>
+        <li>24/7 Customer Support</li>
+        <li>High Quality Standards</li>
+        <li>Affordable Pricing Plans</li>
+        <li>Flexible Scheduling Options</li>
+      </ul>
+
+      <p>We offer different subscription tiers:</p>
+      <ol>
+        <li>Basic – Access to all standard features</li>
+        <li>Premium – Additional premium features and support</li>
+        <li>Enterprise – Customized solutions for large businesses</li>
+      </ol>
+    </section>
+
+    <!-- Table Section -->
+    <section aria-labelledby="pricing-table-section">
+      <h2 id="pricing-table-section">Subscription Pricing</h2>
+      <table>
+        <caption>Subscription Plans and Monthly Pricing</caption>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Price (USD)</th>
+            <th>Features Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>$10</td>
+            <td>Standard access, Email support</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>$25</td>
+            <td>All Basic features, Phone support, Analytics</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Contact us</td>
+            <td>Customized solutions, Dedicated manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Media Section -->
+    <section aria-labelledby="media-section">
+      <h2 id="media-section">Media Gallery</h2>
+      <div class="media-container">
+        <figure>
+          <img src="https://via.placeholder.com/600x300?text=Sample+Image" alt="Sample scenic view" width="600" height="300" />
+          <figcaption>Scenic mountain view.</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-container">
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p>Sample audio: Horse galloping sounds.</p>
+      </div>
+
+      <div class="media-container">
+        <video controls width="600" height="340" poster="https://via.placeholder.com/600x340?text=Video+Poster">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>Sample video: Blooming flower time-lapse.</p>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section aria-labelledby="form-section">
+      <h2 id="form-section">Subscribe to Our Newsletter</h2>
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fname">First Name <span aria-hidden="true" style="color:red">*</span></label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter your first name"
+            required
+            minlength="2"
+            autocomplete="given-name"
+            pattern="[A-Za-z\s'-]+"
+            title="Only letters, spaces, apostrophes, and hyphens are allowed"
+          />
+
+          <label for="lname">Last Name <span aria-hidden="true" style="color:red">*</span></label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Enter your last name"
+            required
+            minlength="2"
+            autocomplete="family-name"
+            pattern="[A-Za-z\s'-]+"
+            title="Only letters, spaces, apostrophes, and hyphens are allowed"
+          />
+
+          <label for="email">Email Address <span aria-hidden="true" style="color:red">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@example.com"
+            required
+            autocomplete="email"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Subscription Preferences</legend>
+
+          <label for="plan">Select Plan <span aria-hidden="true" style="color:red">*</span></label>
+          <select id="plan" name="plan" required>
+            <option value="" disabled selected>Select your subscription plan</option>
+            <option value="basic">Basic</option>
+            <option value="premium">Premium</option>
+            <option value="enterprise">Enterprise</option>
+          </select>
+
+          <label>Preferred Contact Method <span aria-hidden="true" style="color:red">*</span></label>
+          <div>
+            <input type="radio" id="contactEmail" name="contactMethod" value="email" required />
+            <label for="contactEmail">Email</label>
+          </div>
+          <div>
+            <input type="radio" id="contactPhone" name="contactMethod" value="phone" />
+            <label for="contactPhone">Phone</label>
+          </div>
+
+          <label for="phone">Phone Number (if phone contact preferred)</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+1234567890"
+            pattern="^\+?\d{7,15}$"
+            title="Enter a valid phone number with country code (7 to 15 digits)"
+            autocomplete="tel"
+            minlength="7"
+            maxlength="15"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional Information</legend>
+
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Optional message or questions"
+            maxlength="500"
+          ></textarea>
+
+          <label>
+            <input type="checkbox" name="terms" required />
+            I agree to the <a href="#" target="_blank" rel="noopener">Terms and Conditions</a> <span aria-hidden="true" style="color:red">*</span>
+          </label>
+        </fieldset>
+
+        <button type="submit">Subscribe Now</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Kembus. All rights reserved.</p>
+  </footer>
+</body>
+</html>
